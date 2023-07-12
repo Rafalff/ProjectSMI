@@ -27,13 +27,13 @@ public class Menu extends JPanel {
         {"~MAIN~"},
         {"Dashboard"},
         {"~DATA ALAT/STOK~"},
-        {"Alat", "Daftar Alat", "Transaksi Alat"},
-        {"Data Transaksi"},
+        {"Alat & Stok", "Daftar Alat", "Transaksi Alat", "Stok Alat"},
+        {"Status Alat"},
         {"~LAPORAN~"},
         {"A"},
         {"B", "BA"},
         {"~LAINYA~"},
-        {"Admin"},
+        {"Admin","Tambah User","Tambah Cabang"},
         {"Akun"},
         {"Logout"}
     };

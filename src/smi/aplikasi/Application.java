@@ -24,6 +24,7 @@ public class Application extends javax.swing.JFrame {
     private final MainForm mainForm;
     private final LoginForm loginForm;
     private FormTransferAlat formTransferAlat;
+    String kodePegawai = "";
     String level = "A";
     String email = "v";
     String password = "a";
@@ -36,20 +37,21 @@ public class Application extends javax.swing.JFrame {
         setSize(new Dimension(1200, 768));
         setLocationRelativeTo(null);
         loginForm = new LoginForm(this);
-        mainForm = new MainForm(nama, level, idCabang); 
+        mainForm = new MainForm(nama, level, idCabang, kodePegawai); 
         setContentPane(loginForm);                 
         Notifications.getInstance().setJFrame(this);
-        data(level,email,password,nama,idCabang);        
+        data(level,email,password,nama,idCabang,kodePegawai);        
     }
     
-    public void data(String level, String email, String password, String nama, String idCabang) {
+    public void data(String level, String email, String password, String nama, String idCabang, String kodePegawai) {
         this.level = level;
         this.email = email;
         this.password = password;
         this.nama = nama;
         this.idCabang = idCabang;
-        mainForm.setValues(nama, level, idCabang);
-        System.out.println("Received values: " + level + ", " + email + ", " + password + ", " + nama + ", " + idCabang);        
+        this.kodePegawai = kodePegawai;
+        mainForm.setValues(nama, level, idCabang, kodePegawai);
+        System.out.println("Received values: " + level + ", " + email + ", " + password + ", " + nama + ", " + idCabang + ", " + kodePegawai);        
     }
 
     public static void showForm(Component component) {

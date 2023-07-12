@@ -31,16 +31,18 @@ public class MainForm extends JLayeredPane {
     String level;
     String nama;
     String idCabang;
-    public MainForm(String nama, String level, String idCabang) {
+    String kodePegawai;
+    public MainForm(String nama, String level, String idCabang, String kodePegawai) {
         init();  
-        setValues(nama,level,idCabang);
+        setValues(nama,level,idCabang, kodePegawai);
     }
     
-    public void setValues(String nama, String level, String idCabang) {
+    public void setValues(String nama, String level, String idCabang, String kodePegawai) {
         this.nama = nama;
         this.idCabang = idCabang;
         this.level = level;     
-        System.out.println("Received values in MainForm: " + nama + ", " + level + ", " + idCabang);
+        this.kodePegawai = kodePegawai;
+        System.out.println("Received values in MainForm: " + nama + ", " + level + ", " + idCabang + "kode pegawai :" + kodePegawai);
     }
 
 
@@ -90,12 +92,12 @@ public class MainForm extends JLayeredPane {
                 if (subIndex == 1) {
                     Application.showForm(new FormAlat());                    
                 } else if (subIndex == 2) {
-                    Application.showForm(new FormTransferAlat(nama, level, idCabang));
+                    Application.showForm(new FormTransferAlat(nama, level, idCabang, kodePegawai));
                 } else {
                     action.cancel();
                 }
             } else if (index == 2) {
-                Application.showForm(new FormTransferAlat(nama, level, idCabang));
+                Application.showForm(new FormTransferAlat(nama, level, idCabang, kodePegawai));
             } else if (index == 7) {
                 Application.logout();
             } else {

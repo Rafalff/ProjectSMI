@@ -74,28 +74,27 @@ public class LoginForm extends javax.swing.JPanel {
                     level = rs.getString("level");
                     email = rs.getString("email");
                     nama = rs.getString("nama");
-                    String kodePegawai = rs.getString("kodeUser");
+                    kodePegawai = rs.getString("kodeUser");
                     idCabang = rs.getString("idCabang");
                     if (level.equals("Admin")) {
                         JOptionPane.showMessageDialog(null, "Login Berhasil sebagai " + level + " Cabang " + getCabangName(idCabang));
                         application.login();
-                        application.data(level, email, password, nama, idCabang);
-                        mainForm.setValues(nama, level, idCabang);
+                        application.data(level, email, password, nama, idCabang, kodePegawai);
+                        mainForm.setValues(nama, level, idCabang, kodePegawai);
                         
                         
 //                        formTranferAlat.setValues(nama, level, idCabang);
                     } else if (level.equals("Produksi")) {
                         JOptionPane.showMessageDialog(null, "Login Berhasil sebagai " + level + " Cabang " + getCabangName(idCabang));
                         application.login();
-                        application.data(level, email, password, nama, idCabang);
-                        mainForm.setValues(nama, level, idCabang);
-                        formTransferAlat.setValues(nama, level, idCabang);
+                        application.data(level, email, password, nama, idCabang, kodePegawai);
+                        mainForm.setValues(nama, level, idCabang, kodePegawai);
                         
                     } else {
                         JOptionPane.showMessageDialog(null, "Login Berhasil sebagai " + level + " Cabang " + getCabangName(idCabang));
                         application.login();
-                        application.data(level, email, password, nama, idCabang);
-                        mainForm.setValues(nama, level, idCabang);
+                        application.data(level, email, password, nama, idCabang, kodePegawai);
+                        mainForm.setValues(nama, level, idCabang, kodePegawai);
                         
                     }
 
